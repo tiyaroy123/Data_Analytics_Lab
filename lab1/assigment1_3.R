@@ -7,3 +7,12 @@ maximum=function(a,b,c)
     max=c;
   return(max);
 }
+
+calculate_sum=function(n)
+{
+  if(n <= 1) {
+    return(n)
+  } else {
+    return(n + calculate_sum(n-1))
+  }
+}
