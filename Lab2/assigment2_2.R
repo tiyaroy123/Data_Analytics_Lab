@@ -19,3 +19,5 @@ agg_count = aggregate(data[,1:4],by=list(data$class),FUN=length)
 agg_count
 
 #e
+agg_max = aggregate(data[,1:4],by=list(data$class),FUN=max, na.rm=TRUE)
+agg_max
