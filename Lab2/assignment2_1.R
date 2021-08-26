@@ -1,10 +1,10 @@
-#1
+#a
 getwd()
 setwd("C:/Users/suche/Downloads/M.Tech_3rd_Sem/Data Analytics Lab")
 data <- read.csv('Dataset.csv')
 data
 
-#2
+#b
 View(data)
 nrow(data)
 ncol(data)
@@ -21,7 +21,7 @@ data %>% head()
 df_replace <- data %>% dplyr::mutate(replace_mean_age  = ifelse(is.na(Age), average_missing[1], Age),replace_mean_salary = ifelse(is.na(Salary), average_missing[2], Salary))
 View(df_replace)
 
-#3
+#c
 data$city_encoded[data$Country == "France"] = "1"
 data$city_encoded[data$Country == "Spain"] = "2"
 data$city_encoded[data$Country == "Germany"] = "3"
@@ -29,7 +29,7 @@ data$Purchased_encoded[data$Purchased == "Yes"] = "0"
 data$Purchased_encoded[data$Purchased == "No"] = "1"
 View(data)
 
-#4
+#d
 city <- data$city_encoded
 city <- as.numeric(city)
 purch <- data$Purchased_encoded
