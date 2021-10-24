@@ -1,0 +1,28 @@
+install.packages("igraph")
+library("igraph")
+page_rank(
+  graph,
+  algo = c("prpack", "arpack", "power"),
+  vids = V(graph),
+  directed = TRUE,
+  damping = 0.85,
+  personalized = NULL,
+  weights = NULL,
+  options = NULL
+)
+
+g <- sample_gnp(20, 5/20, directed=TRUE)
+page_rank(g)$vector
+
+g2 <- make_star(10)
+page_rank(g2)$vector
+
+g3 <- make_ring(10)
+page_rank(g3)$vector
+
+
+g4 <- make_tree(15)
+page_rank(g4)$vector
+
+reset <- seq(vcount(g4))
+page_rank(g4, personalized=reset)$vector
